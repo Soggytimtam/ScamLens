@@ -36,6 +36,69 @@ Imagine ScamLens Pro as a **smart security system** for your computer, like havi
 - **Local Processing:** Everything happens on your device - no personal information is sent anywhere
 
 ---
+---
+
+## 🛠️ **Open-Source Libraries & Services We Use**
+
+Think of these like **trusted tools** that help us detect scams, similar to how a security guard uses different equipment to protect a building:
+
+### **🔍 Phishing Detection Services (The "Watchdogs")**
+
+#### **1. URLHaus (Community Blocklist)**
+https://urlhaus.abuse.ch
+- **What it is:** A free service that collects known bad websites from around the world
+- **How it works:** Like a neighborhood watch - people report suspicious websites, and we check against this list
+- **Why it's useful:** Catches websites that have already been flagged by security researchers
+
+#### **2. PhishTank (Community-Driven Detection)**
+https://phishtank.org
+- **What it is:** A free database of phishing websites maintained by volunteers and security experts
+- **How it works:** Similar to URLHaus, but specifically focused on phishing (fake login pages, etc.)
+- **Why it's useful:** Helps catch fake banking sites, fake social media logins, and other phishing attempts
+
+#### **3. OpenPhish (Automated Detection)**
+https://openphish.com
+- **What it is:** A free service that automatically finds and lists phishing websites
+- **How it works:** Uses computer programs to scan the internet for suspicious patterns
+- **Why it's useful:** Catches new phishing sites quickly, often before humans report them
+
+#### **4. Cisco Talos Intelligence (Enterprise Security)**
+https://www.talosintelligence.com/reputation
+- **What it is:** A free threat intelligence feed from Cisco, a major cybersecurity company
+- **How it works:** Provides lists of known malicious IP addresses and domains
+- **Why it's useful:** Adds enterprise-grade security intelligence to our detection
+
+#### **5. Emerging Threats (Community Rules)**
+https://community.emergingthreats.net 
+- **What it is:** A free, community-maintained database of security rules and threat indicators
+- **How it works:** Security experts worldwide contribute rules for detecting various threats
+- **Why it's useful:** Keeps us updated with the latest threat patterns and attack methods
+
+### **🤖 AI & Machine Learning Libraries (The "Brain")**
+
+#### **4. TensorFlow.js (Google's AI Engine)**
+- **What it is:** A free, open-source library that lets us run artificial intelligence directly in your browser
+- **How it works:** Like having a smart assistant that learns patterns and can spot new types of scams
+- **Why it's useful:** Makes our detection much smarter - it can understand context, not just look for exact words
+
+#### **5. Sentence Transformers (Text Understanding)**
+- **What it is:** A free library that helps computers understand the meaning of text, not just individual words
+- **How it works:** Like having someone who can read between the lines and understand what's really being said
+- **Why it's useful:** Helps us catch sophisticated scams that use clever language to avoid detection
+
+### **🌐 Web Technologies (The "Foundation")**
+
+#### **6. Chrome Extension APIs (Google's Tools)**
+- **What it is:** Free tools provided by Google that let us safely interact with web pages
+- **How it works:** Like having permission to check what's happening on websites you visit
+- **Why it's useful:** Lets us scan pages for scams without compromising your privacy or security
+
+#### **7. FastAPI (Python Web Framework)**
+- **What it is:** A free, modern way to build web services that can process information quickly
+- **How it works:** Like having a fast, efficient assistant that can handle multiple tasks at once
+- **Why it's useful:** Powers our AI analysis and makes everything run smoothly
+
+-------------------------------------
 
 ## 🏗️ **Project Structure**
 
@@ -154,62 +217,6 @@ ScamLens has been completely upgraded with **AI-powered features** for GovHack:
 - **⚡ Real-time Updates** - Live Scamwatch alert integration
 - **🕐 14-Hour Auto-Refresh** - Automatic threat database updates every 14 hours
 
----
-
-## 🛠️ **Open-Source Libraries & Services We Use**
-
-Think of these like **trusted tools** that help us detect scams, similar to how a security guard uses different equipment to protect a building:
-
-### **🔍 Phishing Detection Services (The "Watchdogs")**
-
-#### **1. URLHaus (Community Blocklist)**
-- **What it is:** A free service that collects known bad websites from around the world
-- **How it works:** Like a neighborhood watch - people report suspicious websites, and we check against this list
-- **Why it's useful:** Catches websites that have already been flagged by security researchers
-
-#### **2. PhishTank (Community-Driven Detection)**
-- **What it is:** A free database of phishing websites maintained by volunteers and security experts
-- **How it works:** Similar to URLHaus, but specifically focused on phishing (fake login pages, etc.)
-- **Why it's useful:** Helps catch fake banking sites, fake social media logins, and other phishing attempts
-
-#### **3. OpenPhish (Automated Detection)**
-- **What it is:** A free service that automatically finds and lists phishing websites
-- **How it works:** Uses computer programs to scan the internet for suspicious patterns
-- **Why it's useful:** Catches new phishing sites quickly, often before humans report them
-
-#### **4. Cisco Talos Intelligence (Enterprise Security)**
-- **What it is:** A free threat intelligence feed from Cisco, a major cybersecurity company
-- **How it works:** Provides lists of known malicious IP addresses and domains
-- **Why it's useful:** Adds enterprise-grade security intelligence to our detection
-
-#### **5. Emerging Threats (Community Rules)**
-- **What it is:** A free, community-maintained database of security rules and threat indicators
-- **How it works:** Security experts worldwide contribute rules for detecting various threats
-- **Why it's useful:** Keeps us updated with the latest threat patterns and attack methods
-
-### **🤖 AI & Machine Learning Libraries (The "Brain")**
-
-#### **4. TensorFlow.js (Google's AI Engine)**
-- **What it is:** A free, open-source library that lets us run artificial intelligence directly in your browser
-- **How it works:** Like having a smart assistant that learns patterns and can spot new types of scams
-- **Why it's useful:** Makes our detection much smarter - it can understand context, not just look for exact words
-
-#### **5. Sentence Transformers (Text Understanding)**
-- **What it is:** A free library that helps computers understand the meaning of text, not just individual words
-- **How it works:** Like having someone who can read between the lines and understand what's really being said
-- **Why it's useful:** Helps us catch sophisticated scams that use clever language to avoid detection
-
-### **🌐 Web Technologies (The "Foundation")**
-
-#### **6. Chrome Extension APIs (Google's Tools)**
-- **What it is:** Free tools provided by Google that let us safely interact with web pages
-- **How it works:** Like having permission to check what's happening on websites you visit
-- **Why it's useful:** Lets us scan pages for scams without compromising your privacy or security
-
-#### **7. FastAPI (Python Web Framework)**
-- **What it is:** A free, modern way to build web services that can process information quickly
-- **How it works:** Like having a fast, efficient assistant that can handle multiple tasks at once
-- **Why it's useful:** Powers our AI analysis and makes everything run smoothly
 
 
 ---------------------------------------------------------------------
