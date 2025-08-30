@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ScamLens Pro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="scamlens-popup">
+  <h3>🛡️ ScamLens Pro</h3>
+  
+  <div class="status-info" id="last">
+    <span id="status-text">Checking feed status...</span>
+    <div id="auto-refresh-info" style="margin-top: 8px; font-size: 11px; color: #666;">
+      <span id="next-refresh">⏰ Next auto-refresh: Calculating...</span><br>
+      <span id="update-count">📊 Total updates: Loading...</span>
+    </div>
+  </div>
+  
+  <!-- Service Status Section -->
+  <div class="services-status">
+    <h4>🔍 Phishing Detection Services</h4>
+    <div id="services-list">
+      <div class="service-item">
+        <span class="service-name">🦘 ACCC Rules</span>
+        <span class="service-status" id="accc-status">Checking...</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">🚨 Scamwatch</span>
+        <span class="service-status" id="scamwatch-status">Checking...</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">🌐 URLHaus</span>
+        <span class="service-status" id="urlhaus-status">Checking...</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">🎣 PhishTank</span>
+        <span class="service-status" id="phishtank-status">Checking...</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">🤖 OpenPhish</span>
+        <span class="service-status" id="openphish-status">Checking...</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">🏢 Cisco Talos</span>
+        <span class="service-status" id="talos-status">Checking...</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">⚡ Emerging Threats</span>
+        <span class="service-status" id="emergingthreats-status">Checking...</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="btn-group">
+    <button id="rescan" class="btn-primary">
+      🔍 Rescan this page
+    </button>
+    <button id="refresh-feeds" class="btn-secondary">
+      🔄 Refresh Feeds
+    </button>
+    <button id="view-logs" class="btn-secondary">
+      📊 View Logs
+    </button>
+    <button id="report" class="btn-secondary">
+      📝 Report a scam
+    </button>
+    <button id="settings" class="btn-secondary">
+      ⚙️ Settings
+    </button>
+  </div>
+  
+  <!-- Feed Update Logs Section -->
+  <div class="feed-logs" id="feed-logs" style="display: none;">
+    <h4>📊 Recent Feed Updates</h4>
+    <div id="logs-container"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
