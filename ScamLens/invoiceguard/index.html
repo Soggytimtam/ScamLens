@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>InvoiceGuard</title>
+  <style>
+    body { font: 16px system-ui; margin: 24px; }
+    #drop { border: 2px dashed #999; padding: 24px; text-align: center; border-radius: 12px; }
+    .ok { background: #c6f6d5; padding: 10px; border-left: 4px solid #16a34a; }
+    .warn { background: #ffe7a3; padding: 10px; border-left: 4px solid #ffb000; }
+  </style>
+</head>
+<body>
+  <h2>InvoiceGuard (BSB/Account Change Checker)</h2>
+  <p>Drop a supplier invoice PDF below. We'll extract BSB & Account, remember the first seen values for this ABN, and warn if they change.</p>
+  <div id="drop">Drop PDF here or <input type="file" id="file" accept="application/pdf"></div>
+  <pre id="out"></pre>
+
+  <script type="module">
+    import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs";
+    const BSB = /\b\d{3}[- ]?\d{3}\b/;
+    const ACCT = /\b\d{6,10}\b/;
+    const ABN = /\bABN[:\s]*([0-9 ]{11,})\b/i;
+    const fileInput = document.getElementById('file');
+    const drop = document.getElementById('drop');
+    const out = document.getElementById('out');
+
+    async function handleFile(file) {
+      if (!file) return;
+      const buf = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+      let text = '';
+      for (let p = 1; p <= pdf.numPages; p++) {
+        const page = await pdf.getPage(p);
+        const tc = await page.getTextContent();
+        text += ' ' + tc.items.map(i => i.str).join(' ');
+      }
+      const abn = (text.match(ABN) || [])[1]?.replace(/\s+/g, '');
+      const bsb = (text.match(BSB) || [])[0];
+      const acct = (text.match(ACCT) || [])[0];
+
+      const key = abn ? `inv_${abn}` : 'inv_unknown';
+      const prior = JSON.parse(localStorage.getItem(key) || 'null');
+
+      let lines = [];
+      lines.push(`ABN: ${abn || 'n/a'}`);
+      lines.push(`BSB: ${bsb || 'n/a'}`);
+      lines.push(`Account: ${acct || 'n/a'}`);
+
+      if (prior && (prior.bsb !== bsb || prior.acct !== acct)) {
+        lines.push('');
+        lines.push('⚠️ WARNING: Bank details changed for this supplier.');
+        lines.push(`   Was: ${prior.bsb || 'n/a'} / ${prior.acct || 'n/a'}`);
+        lines.push(`   Now: ${bsb || 'n/a'} / ${acct || 'n/a'}`);
+        lines.push('   Action: Call the supplier on a known phone number to confirm any change.');
+      } else {
+        if (prior) {
+          lines.push('');
+          lines.push('✅ No change vs saved details.');
+        } else {
+          localStorage.setItem(key, JSON.stringify({ bsb, acct, ts: Date.now() }));
+          lines.push('');
+          lines.push('ℹ️ First time seeing this supplier — saved details for future comparison.');
+        }
+      }
+      out.textContent = lines.join('\n');
+    }
+
+    fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+    drop.addEventListener('dragover', e => { e.preventDefault(); drop.style.background = '#f5f5f5'; });
+    drop.addEventListener('dragleave', () => drop.style.background = '');
+    drop.addEventListener('drop', e => {
+      e.preventDefault(); drop.style.background = '';
+      const f = e.dataTransfer.files[0];
+      handleFile(f);
+    });
+  </script>
+</body>
+</html>

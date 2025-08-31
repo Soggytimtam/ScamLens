@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Whitelist Test - ScamLens Pro</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section { 
+            border: 2px solid #ff6b6b; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 8px;
+            background: #fff5f5;
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .feature-box {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #9c27b0;
+        }
+    </style>
+</head>
+<body>
+    <h1>ScamLens Pro - Pattern Whitelist Test</h1>
+    
+    <div class="info-box">
+        <h3>🧪 How to Test Pattern-Level Whitelisting:</h3>
+        <ol>
+            <li>Load the ScamLens Pro extension</li>
+            <li>Refresh this page - you should see a banner with multiple patterns</li>
+            <li>Click "🔍 Highlight Patterns" to see detailed highlighting</li>
+            <li>Hover over highlighted areas to see the new whitelist buttons</li>
+            <li>Click "✅ Whitelist This Pattern" on any pattern you want to ignore</li>
+            <li>That specific pattern will disappear from highlights</li>
+            <li>Refresh the page - only non-whitelisted patterns will show</li>
+        </ol>
+    </div>
+    
+    <div class="feature-box">
+        <h3>🎯 New Feature: Pattern-Level Whitelisting</h3>
+        <p><strong>Before:</strong> You could only whitelist entire domains</p>
+        <p><strong>Now:</strong> You can whitelist specific scam patterns on specific domains!</p>
+        <ul>
+            <li>✅ Whitelist "urgency threats" but keep "unusual payment" warnings</li>
+            <li>✅ Whitelist "bank details change" but keep "remote access" alerts</li>
+            <li>✅ Each pattern has its own whitelist button in the highlight tooltip</li>
+            <li>✅ Whitelisted patterns are remembered between sessions</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>🚨 URGENT: Account will be closed within 24 hours</h2>
+        <p>This is your final warning. Act now or lose access forever.</p>
+        <p>You must verify your identity immediately to avoid permanent closure.</p>
+        <p><em>This should trigger an "urgency threat" pattern</em></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>💳 Payment Required - Unusual Methods</h2>
+        <p>Please pay with iTunes gift cards or Bitcoin to unlock your account.</p>
+        <p>Use Western Union or MoneyGram for immediate processing.</p>
+        <p><em>This should trigger an "unusual payment" pattern</em></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>🏦 Bank Details Have Changed</h2>
+        <p>Our bank details have changed. Please use the new BSB and account number.</p>
+        <p>Ignore previous payment instructions and invoices.</p>
+        <p><em>This should trigger a "bank details change" pattern</em></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔧 Technical Support - Remote Access Required</h2>
+        <p>Install AnyDesk so we can provide remote access to fix your computer issues.</p>
+        <p>We also need TeamViewer to secure your device and remove malware.</p>
+        <p><em>This should trigger a "remote access" pattern</em></p>
+    </div>
+    
+    <script>
+        console.log('🧪 Pattern Whitelist Test Page Loaded');
+        console.log('📄 Page contains multiple scam patterns to test individual whitelisting');
+        console.log('🎯 Test the new pattern-level whitelist feature:');
+        console.log('   1. Highlight patterns first');
+        console.log('   2. Hover over highlights to see whitelist buttons');
+        console.log('   3. Click whitelist on specific patterns');
+        console.log('   4. Refresh to see only non-whitelisted patterns remain');
+    </script>
+</body>
+</html>

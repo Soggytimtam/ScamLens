@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamLens Pro - Next Steps Testing</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-scenario {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b6b;
+        }
+        .scenario-title {
+            color: #2c3e50;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .expected-steps {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #4caf50;
+        }
+        .expected-steps h4 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+        .step-item {
+            margin: 8px 0;
+            padding: 8px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .interaction-note {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid #2196f3;
+            font-size: 13px;
+        }
+        .test-content {
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px dashed #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛡️ ScamLens Pro - Next Steps Testing</h1>
+        <p>Test the new contextual recommendations and interactive functionality</p>
+    </div>
+
+    <div class="test-scenario">
+        <h2 class="scenario-title">🚨 Scenario 1: Immediate Threat (High Risk)</h2>
+        <div class="test-content">
+            <p><strong>URGENT:</strong> Your account will be closed within 24 hours! This is your final warning.</p>
+            <p>Legal action will be taken immediately. The police are involved. Act now!</p>
+        </div>
+        <div class="expected-steps">
+            <h4>🎯 Expected Next Steps (Click to Test):</h4>
+            <div class="step-item">🚨 STOP - Do Not Proceed → Should show confirmation dialog</div>
+            <div class="step-item">🔒 Secure Your Accounts → Should open password manager</div>
+            <div class="step-item">📝 Report This Scam → Should open Scamwatch portal</div>
+        </div>
+        <div class="interaction-note">
+            <strong>Test:</strong> Click on each next step recommendation to verify the interactive functionality works correctly.
+        </div>
+    </div>
+
+    <div class="test-scenario">
+        <h2 class="scenario-title">💳 Scenario 2: Payment Scam</h2>
+        <div class="test-content">
+            <p>Pay immediately with iTunes gift cards or Bitcoin to resolve this urgent matter.</p>
+            <p>We cannot accept regular bank transfers. Only gift cards work for immediate processing.</p>
+        </div>
+        <div class="expected-steps">
+            <h4>🎯 Expected Next Steps:</h4>
+            <div class="step-item">💳 Verify Payment Instructions → Generic advice alert</div>
+            <div class="step-item">📝 Report This Scam → Opens Scamwatch portal</div>
+            <div class="step-item">🔍 Stay Vigilant → Generic advice alert</div>
+        </div>
+    </div>
+
+    <div class="test-scenario">
+        <h2 class="scenario-title">🏦 Scenario 3: Banking Scam</h2>
+        <div class="test-content">
+            <p>Our bank details have changed. Please use the new BSB and account number for all payments.</p>
+            <p>Ignore previous payment instructions and update your records immediately.</p>
+        </div>
+        <div class="expected-steps">
+            <h4>🎯 Expected Next Steps:</h4>
+            <div class="step-item">🏦 Contact Your Bank → Generic advice alert</div>
+            <div class="step-item">💳 Verify Payment Instructions → Generic advice alert</div>
+            <div class="step-item">📝 Report This Scam → Opens Scamwatch portal</div>
+        </div>
+    </div>
+
+    <div class="test-scenario">
+        <h2 class="scenario-title">💻 Scenario 4: Tech Support Scam</h2>
+        <div class="test-content">
+            <p>Install AnyDesk immediately so we can provide remote support for your computer.</p>
+            <p>We need TeamViewer access to remove the virus from your device right now.</p>
+        </div>
+        <div class="expected-steps">
+            <h4>🎯 Expected Next Steps:</h4>
+            <div class="step-item">💻 Never Allow Remote Access → Generic advice alert</div>
+            <div class="step-item">📝 Report This Scam → Opens Scamwatch portal</div>
+            <div class="step-item">🔍 Stay Vigilant → Generic advice alert</div>
+        </div>
+    </div>
+
+    <div class="test-scenario">
+        <h2 class="scenario-title">🏛️ Scenario 5: Government Impersonation</h2>
+        <div class="test-content">
+            <p>You have a myGov notification about your ATO refund that requires immediate attention.</p>
+            <p>Log in now to claim your tax refund before it expires permanently.</p>
+        </div>
+        <div class="expected-steps">
+            <h4>🎯 Expected Next Steps:</h4>
+            <div class="step-item">🏛️ Check Official Government Sites → Opens myGov.au</div>
+            <div class="step-item">📝 Report This Scam → Opens Scamwatch portal</div>
+            <div class="step-item">🔍 Stay Vigilant → Generic advice alert</div>
+        </div>
+    </div>
+
+    <div class="test-scenario">
+        <h2 class="scenario-title">🎯 Scenario 6: Investment Scam</h2>
+        <div class="test-content">
+            <p>Get rich quick with guaranteed returns! 500% profit guaranteed with zero risk!</p>
+            <p>This exclusive investment opportunity won't last long. Join now!</p>
+        </div>
+        <div class="expected-steps">
+            <h4>🎯 Expected Next Steps:</h4>
+            <div class="step-item">🎯 Research Before Investing → Opens MoneySmart.gov.au</div>
+            <div class="step-item">📝 Report This Scam → Opens Scamwatch portal</div>
+            <div class="step-item">🔍 Stay Vigilant → Generic advice alert</div>
+        </div>
+    </div>
+
+    <div style="background: white; padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <h3>🧪 Testing Instructions</h3>
+        <ol>
+            <li><strong>Load Extension:</strong> Make sure ScamLens Pro is loaded and enabled</li>
+            <li><strong>Refresh Page:</strong> Reload this page to trigger detection</li>
+            <li><strong>Observe Banner:</strong> Should show RED banner due to high-risk patterns</li>
+            <li><strong>Check Next Steps:</strong> Look for the "🛡️ Recommended Next Steps" section in the banner</li>
+            <li><strong>Test Interactions:</strong> Click on each next step recommendation to test functionality</li>
+            <li><strong>Verify Actions:</strong> Confirm that clicks open correct websites or show appropriate dialogs</li>
+            <li><strong>Test Highlighting:</strong> Click "🔍 Highlight Patterns" to see text highlighting</li>
+            <li><strong>Check Console:</strong> Open browser console (F12) to see detailed logs</li>
+        </ol>
+
+        <h3>🔍 What to Look For</h3>
+        <ul>
+            <li>✅ Banner appears with correct risk level (RED for this page)</li>
+            <li>✅ Two-column layout: "Detected Patterns" (left) + "Recommended Next Steps" (right)</li>
+            <li>✅ Next steps are relevant to detected patterns</li>
+            <li>✅ Steps are color-coded by priority (red=immediate, orange=high, etc.)</li>
+            <li>✅ Clicking steps triggers appropriate actions</li>
+            <li>✅ Visual feedback appears when steps are clicked</li>
+            <li>✅ Hover effects work on clickable steps</li>
+        </ul>
+
+        <h3>⚠️ Troubleshooting</h3>
+        <ul>
+            <li>If no banner appears: Check extension is loaded and refresh page</li>
+            <li>If next steps don't work: Check browser console for JavaScript errors</li>
+            <li>If links don't open: Check if popup blocker is interfering</li>
+            <li>If highlighting doesn't work: Try refreshing and clicking highlight button again</li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('🧪 Next Steps Test Suite Loaded');
+        console.log('🎯 This page tests interactive next step recommendations');
+        console.log('📊 Contains multiple high-risk patterns to trigger comprehensive recommendations');
+        console.log('⚡ Test the click functionality on each recommended step');
+        
+        // Log expected patterns for debugging
+        console.log('Expected patterns to be detected:');
+        console.log('  - urgency_threat: "24 hours", "final warning", "immediately"');
+        console.log('  - unusual_payment: "iTunes gift cards", "Bitcoin"');
+        console.log('  - bank_details_change: "bank details have changed", "new BSB"');
+        console.log('  - remote_access: "AnyDesk", "TeamViewer"');
+        console.log('  - tax_bait: "myGov", "ATO refund"');
+        console.log('  - investment_too_good: "guaranteed returns", "get rich quick"');
+    </script>
+</body>
+</html>

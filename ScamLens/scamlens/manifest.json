@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "ScamLens Pro",
+  "version": "1.0.0",
+  "description": "Advanced scam detection with ACCC priority, false positive prevention, and automatic Scamwatch reporting",
+  "action": { "default_popup": "popup.html" },
+  "permissions": [
+    "storage", 
+    "activeTab", 
+    "scripting", 
+    "alarms",
+    "tabs",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://urlhaus.abuse.ch/*",
+    "https://data.phishtank.com/*",
+    "https://openphish.com/*",
+    "https://www.scamwatch.gov.au/*",
+    "https://portal.scamwatch.gov.au/*",
+    "https://*/*",
+    "http://*/*",
+    "file://*/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*", "file://*/*"],
+    "js": [
+      "false_positive_prevention.js",
+      "auto_reporting.js",
+      "ai_engine.js",
+      "content.js"
+    ],
+    "css": ["styles.css"],
+    "run_at": "document_end"
+  }],
+  "web_accessible_resources": [{
+    "resources": [
+      "rules/*.json",
+      "false_positive_prevention.js",
+      "auto_reporting.js",
+      "ai_engine.js"
+    ],
+    "matches": ["<all_urls>"]
+  }],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
